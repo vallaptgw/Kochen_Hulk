@@ -1,0 +1,25 @@
+<?php $vehicleErr = "";  ?>
+<?php
+	if(isset($_POST['check']))
+	{
+		 if (empty($_POST["vehicle"])) {
+     		$vehicleErr = "Vehicle is required";
+     	}
+		else{
+			$vehicle = $_POST['vehicle'];
+			echo $vehicle;
+		}
+
+	}
+?>
+<html>
+<head>
+</head>
+<body>
+	<form action="" method="post">
+		<input type="radio" name="vehicle" value="Bike" > I have a bike <br>
+  		<input type="radio" name="vehicle" value="Car" > I have a car <br>
+  		<span class="error"><?php echo $vehicleErr;?></span><br>
+		<button name="check" type="submit">GO</button>
+	</form>
+</body>		        	
